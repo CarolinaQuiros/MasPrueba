@@ -16,15 +16,24 @@ public class Indigena implements Persona {
     private String procedencia;
     private String paisOrigen;
     private String paisActual;
+    private int cantidadDias;
 
-    public Indigena(String estatus, String identidad, String procedencia, String paisOrigen, String paisActual) {
+    public Indigena(String estatus, String identidad, String procedencia, String paisOrigen, String paisActual, int cantidadDias) {
         this.estatus = estatus;
         this.identidad = identidad;
         this.procedencia = procedencia;
         this.paisOrigen = paisOrigen;
         this.paisActual = paisActual;
+        this.cantidadDias = cantidadDias;
     }
 
+    public int getCantidadDias() {
+        return cantidadDias;
+    }
+
+    public void setCantidadDias(int cantidadDias) {
+        this.cantidadDias = cantidadDias;
+    }
     
     public Indigena() {
     }
@@ -70,7 +79,27 @@ public class Indigena implements Persona {
         this.paisActual = paisActual;
     }
     
-    public int dias() {
-        return 10;
+    @Override
+    public String getEstatu(){
+        return getEstatus();
+    }
+    
+    @Override
+    public String getIdentida(){
+        return getIdentidad();
+    }
+    
+    @Override
+    public String getProcedenci(){
+        return getProcedencia();
+    }
+    
+    @Override
+    public String getPaisOrige(){
+        return getPaisOrigen();
+    }
+
+    public void setPaisActua(String pais) {
+        this.paisActual = pais;
     }
 }

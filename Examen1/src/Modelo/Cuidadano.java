@@ -15,19 +15,27 @@ public class Cuidadano implements Persona {
     private String procedencia;
     private String paisOrigen;
     private String paisActual;
+    private int cantidadDias;
 
     public Cuidadano() {
     }
 
-    public Cuidadano(String estatus, String identidad, String procedencia, String paisOrigen, String paisActual) {
+    public Cuidadano(String estatus, String identidad, String procedencia, String paisOrigen, String paisActual, int cantidadDias) {
         this.estatus = estatus;
         this.identidad = identidad;
         this.procedencia = procedencia;
         this.paisOrigen = paisOrigen;
         this.paisActual = paisActual;
+        this.cantidadDias = cantidadDias;
     }
 
-  
+    public int getCantidadDias() {
+        return cantidadDias;
+    }
+
+    public void setCantidadDias(int cantidadDias) {
+        this.cantidadDias = cantidadDias;
+    }
 
     public String getEstatus() {
         return estatus;
@@ -64,12 +72,33 @@ public class Cuidadano implements Persona {
     public String getPaisActual() {
         return paisActual;
     }
+    
+    @Override
+    public String getEstatu(){
+        return getEstatus();
+    }
+    
+    @Override
+    public String getIdentida(){
+        return getIdentidad();
+    }
+    
+    @Override
+    public String getProcedenci(){
+        return getProcedencia();
+    }
+    
+    @Override
+    public String getPaisOrige(){
+        return getPaisOrigen();
+    }
+
+    public void setPaisActua(String pais) {
+        this.paisActual = pais;
+    }
 
     public void setPaisActual(String paisActual) {
         this.paisActual = paisActual;
     }
-    
-    public int dias() {
-        return 30;
-    }
+
 }

@@ -15,20 +15,23 @@ public class Fabrica {
     
     private Persona persona;
     
-    public Persona getPersona(String estatus, String identidad, String procedencia, String paisOrigen, String paisActual){
+    public Persona getPersona(String estatus, String identidad, String procedencia, String paisOrigen, String paisActual, int cantidadDias){
         
         switch(estatus){
                 case "Cuidadano":
-                    persona = new Cuidadano(estatus,identidad,procedencia,paisOrigen,paisActual);
+                    cantidadDias = 30;
+                    persona = new Cuidadano(estatus,identidad,procedencia,paisOrigen,paisActual,cantidadDias);
                  break;
                 case "Indigena":
-                    persona = new Indigena(estatus,identidad,procedencia,paisOrigen,paisActual);
+                    persona = new Indigena(estatus,identidad,procedencia,paisOrigen,paisActual,cantidadDias);
                     break;
                 case "Migrante":
-                    persona = new Migrante(estatus,identidad,procedencia,paisOrigen,paisActual);
+                    cantidadDias = 10;
+                    persona = new Migrante(estatus,identidad,procedencia,paisOrigen,paisActual,cantidadDias);
                     break;
                 case "Refugiado":
-                    persona = new Refugiado(estatus, identidad, procedencia, paisOrigen, paisActual);
+                    cantidadDias = 30;
+                    persona = new Refugiado(estatus, identidad, procedencia, paisOrigen, paisActual,cantidadDias);
                     break;
             }
             return persona;

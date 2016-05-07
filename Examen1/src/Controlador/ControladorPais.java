@@ -35,18 +35,32 @@ public class ControladorPais implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
      if (e.getActionCommand().equalsIgnoreCase("Guardar")){
-            pais = new Pais(framePais.getPais(),framePais.getDias());
+            pais = new Pais(framePais.getPais(),framePais.getDias(), framePais.getDias());
             plantilla.guardarAlgo(pais);
             arreglo.add("Zona Indigena");
             arreglo.add(framePais.getPais());
+            framePais.limpiar();
         }  
      if (e.getActionCommand().equalsIgnoreCase("Atras")){
             framePais.setVisible(false);
         }
     }//fin del actionPerformed
     
-   
     public ArrayList<String> getArreglo() {
         return arreglo;
     }
+
+    public DB_Plantilla<Pais> getPlantilla() {
+        return plantilla;
+    }
+    
+   public boolean buscar(String codigo){
+         boolean existe = false;
+            for(int i=0;i<plantilla.getSize();i++){
+                if(plantilla.retornarAlgo(i).getCodigo().equalsIgnoreCase(codigo)){
+                    existe=true;
+                }
+            }
+            return existe;
+        }
 }

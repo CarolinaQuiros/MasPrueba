@@ -17,7 +17,6 @@ public class DB_Plantilla <T> {
     
     public DB_Plantilla(){
         arreglo = new ArrayList<T>();
-   
     }
     
     public void guardarAlgo(T t){       
@@ -26,6 +25,15 @@ public class DB_Plantilla <T> {
     
     public ArrayList<T> getArreglo() {
         return arreglo;
+    }
+    
+    //Esto metodo me retorna cualquier dato que desee obtener
+    public T retornarAlgo(int dato){
+        return (T) arreglo.get(dato);
+    }
+    
+    public int getSize(){
+        return arreglo.size();
     }
     
     

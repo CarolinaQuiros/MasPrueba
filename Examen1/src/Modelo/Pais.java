@@ -12,13 +12,23 @@ package Modelo;
 public class Pais {
     private String codigo;
     private int cupo;
+    int cantSolicitudes;
 
     public Pais() {
     }
 
-    public Pais(String codigo, int cupo) {
+    public Pais(String codigo, int cupo, int cantSolicitudes) {
         this.codigo = codigo;
         this.cupo = cupo;
+        this.cantSolicitudes = cantSolicitudes;
+    }
+
+    public int getCantSolicitudes() {
+        return cantSolicitudes;
+    }
+
+    public void setCantSolicitudes(int cantSolicitudes) {
+        this.cantSolicitudes = cantSolicitudes;
     }
 
     public String getCodigo() {
@@ -37,5 +47,8 @@ public class Pais {
         this.cupo = cupo;
     }
     
+    public void restarCupos(int uno){
+        cupo = cupo-uno;
+    }
     
 }

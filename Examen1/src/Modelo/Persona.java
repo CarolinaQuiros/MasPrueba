@@ -10,5 +10,10 @@ package Modelo;
  * @author Carolina
  */
 public interface Persona {
-    int dias();
+    String getEstatu();
+    String getIdentida();
+    String getProcedenci();
+    String getPaisOrige();
+    void setPaisActual(String pais);
+
 }

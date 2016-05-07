@@ -33,6 +33,15 @@ public class FramePais extends javax.swing.JFrame {
     public int getDias(){
          return Integer.parseInt(txtCodigo.getText());
      }
+    public int getSolicitud(){
+         return Integer.parseInt(txtSolicitud.getText());
+     }
+    
+    public void limpiar(){
+        txtCodigo.setText("");
+        txtCupo.setText("");
+        txtSolicitud.setText("");
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,6 +58,8 @@ public class FramePais extends javax.swing.JFrame {
         txtCupo = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtSolicitud = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,10 +71,18 @@ public class FramePais extends javax.swing.JFrame {
 
         btnAtras.setText("Atras");
 
+        jLabel3.setText("Solicitud maxima de refugiados:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAtras)
+                .addGap(33, 33, 33)
+                .addComponent(btnGuardar)
+                .addGap(58, 58, 58))
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -74,14 +93,13 @@ public class FramePais extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(txtCupo)))
+                        .addComponent(txtCupo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSolicitud)
+                        .addGap(93, 93, 93)))
                 .addContainerGap(69, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAtras)
-                .addGap(33, 33, 33)
-                .addComponent(btnGuardar)
-                .addGap(58, 58, 58))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,7 +112,11 @@ public class FramePais extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCupo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSolicitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
                     .addComponent(btnAtras))
@@ -113,7 +135,9 @@ public class FramePais extends javax.swing.JFrame {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtCodigo;
     private javax.swing.JTextField txtCupo;
+    private javax.swing.JTextField txtSolicitud;
     // End of variables declaration//GEN-END:variables
 }
